@@ -1,5 +1,9 @@
 # IX Systems Documentation — Representative Slice of Backend Architecture
 
+![License](https://img.shields.io/badge/license-PolyForm_Noncommercial-blue.svg)  
+![Docs](<https://img.shields.io/badge/docs-Representative_Slice_(51_pages)-green.svg>)  
+![Last Commit](https://img.shields.io/github/last-commit/Next-AI-Labs-Inc/ix-systems-docs.svg)
+
 This repo captures interconnected themes from IX Coach's backend — architecture, registries, and organizational maps — showing how complex AI systems are documented, debugged, and scaled.
 
 ## System Architecture & Living Maps
@@ -15,7 +19,7 @@ graph TD
         INTENT --> PURPOSE
         PURPOSE --> DRIFT
     end
-    
+
     subgraph "Deterministic Debugging"
         REPLAY[State Replay Engine<br/>Reconstruct any moment]
         CAUSAL[Causal Chain Tracking<br/>Root cause in seconds]
@@ -23,7 +27,7 @@ graph TD
         REPLAY --> CAUSAL
         CAUSAL --> PREDICT
     end
-    
+
     subgraph "Self-Improving System"
         LEARN[Pattern Recognition<br/>Learns from every commit]
         SUGGEST[Proactive Suggestions<br/>Prevents known failures]
@@ -31,13 +35,13 @@ graph TD
         LEARN --> SUGGEST
         SUGGEST --> EVOLVE
     end
-    
+
     DRIFT --> REPLAY
     PREDICT --> LEARN
     EVOLVE --> INTENT
     CAUSAL --> LEARN
     PURPOSE --> EVOLVE
-    
+
     style Semantic Intent Layer fill:#fff0f0
     style Deterministic Debugging fill:#f0f0ff
     style Self-Improving System fill:#f0fff0
@@ -55,9 +59,9 @@ Our [test coverage map](./docs/tests/TEST-MAP.md) demonstrates comprehensive val
 
 The [function intent index](./docs/issues/FUNCTION-INTENT-INDEX-MAP.md) bridges the semantic gap between implementation and purpose. By documenting what each function is intended to achieve rather than merely what it does, we enable AI agents to reason about code modifications at the conceptual level. This semantic understanding prevents the drift between original intent and evolved implementation that typically degrades codebases over time.
 
-Our [initiatives map](./docs/initiatives/initiatives-map.md) aligns strategic vision with tactical execution. By maintaining explicit connections between high-level objectives and implementation tasks, we ensure that every line of code contributes to measurable business outcomes. This alignment prevents the feature drift that occurs when engineering efforts become disconnected from strategic goals.
+Our [initiatives map](./docs/documentation/db/mongo-initiatives-guide.md) aligns strategic vision with tactical execution. By maintaining explicit connections between high-level objectives and implementation tasks, we ensure that every line of code contributes to measurable business outcomes. This alignment prevents the feature drift that occurs when engineering efforts become disconnected from strategic goals.
 
-The [architecture and purpose doc](./account-management/ARCHITECTURE_AND_PURPOSE.md) exemplifies our modular subsystem design philosophy. Each subsystem maintains clear boundaries and explicit contracts, enabling independent evolution while preserving system coherence. This approach allows teams to innovate within their domains without creating cascading dependencies that typically emerge in tightly coupled architectures.
+The architecture and purpose documentation exemplifies our modular subsystem design philosophy. Each subsystem maintains clear boundaries and explicit contracts, enabling independent evolution while preserving system coherence. This approach allows teams to innovate within their domains without creating cascading dependencies that typically emerge in tightly coupled architectures.
 
 The [change review system](./CHANGE_REVIEW_SYSTEM.md) implements quality gates that scale with system complexity. Rather than treating review as overhead, we view it as investment in system integrity. Every change is tracked, contextualized, and linked to its originating purpose, creating an audit trail that transforms institutional knowledge from tacit to explicit.
 
@@ -72,19 +76,19 @@ graph TD
         DISCOVER[Auto-Discovery<br/>Finds undocumented code]
         VERSION[Semantic Versioning<br/>Breaking change detection]
     end
-    
+
     subgraph "Complexity Intelligence"
         ATOMIC[Atomic Functions ⚛️<br/>Single responsibility]
         MOLECULAR[Molecular Functions 🧬<br/>Composed operations]
         QUANTUM[Quantum Complexity<br/>N-dimensional analysis]
     end
-    
+
     subgraph "10x Integration Speed"
         PREDICT[Pattern Prediction<br/>Suggests next integration]
         MOCK[Smart Mock Generation<br/>From production traces]
         CONTRACT[Living Contracts<br/>Self-enforcing interfaces]
     end
-    
+
     AUTO -->|Continuous| DISCOVER
     DISCOVER -->|Classification| ATOMIC
     ATOMIC -->|Composition| MOLECULAR
@@ -94,7 +98,7 @@ graph TD
     MOCK -->|Validation| CONTRACT
     CONTRACT -->|Updates| AUTO
     VERSION -->|Evolution| CONTRACT
-    
+
     style Zero-Drift Documentation fill:#fff0f0
     style Complexity Intelligence fill:#f0fff0
     style 10x Integration Speed fill:#f0f0ff
@@ -113,17 +117,19 @@ Our [error codes registry](./docs/documentation/api/ERROR_CODES_REGISTRY.md) sta
 
 The [API documentation guide](./docs/documentation/api/API_DOCUMENTATION_GUIDE.md) establishes documentation as contract. When every endpoint follows identical documentation patterns, integration complexity becomes predictable and testable. This consistency reduces integration time by 60-70% because developers can apply learned patterns across the entire API surface.
 
-For real-world integration patterns, see our [Stripe webhook testing guide](./docs/documentation/stripe/STRIPE_WEBHOOK_TESTING_GUIDE.md). This demonstrates our approach to critical payment flows - using confirmed mock data, comprehensive test coverage, and deterministic replay capabilities. Financial systems demand zero-error tolerance, which we achieve through exhaustive testing of every possible webhook scenario before production deployment.
+For real-world integration patterns, we maintain comprehensive payment flow documentation. This demonstrates our approach to critical payment flows - using confirmed mock data, comprehensive test coverage, and deterministic replay capabilities. Financial systems demand zero-error tolerance, which we achieve through exhaustive testing of every possible webhook scenario before production deployment.
 
-The [Stripe query guide](./docs/documentation/stripe/STRIPE_QUERY_GUIDE_R.md) codifies patterns learned from processing millions of payment events. We document not just successful patterns but also failure modes and their mitigations. This institutional knowledge transfer reduces the learning curve for payment integration from months to days.
+Our payment integration documentation codifies patterns learned from processing millions of payment events. We document not just successful patterns but also failure modes and their mitigations. This institutional knowledge transfer reduces the learning curve for payment integration from months to days.
 
-Our [subscription plan resolver](./docs/documentation/subscription/PLAN_RESOLVER_USAGE_GUIDE.md) implements business logic as composable rules rather than nested conditionals. This approach handles edge cases like trial-to-paid conversions, plan migrations, and grandfathered pricing through declarative configuration rather than imperative code. The result is business logic that product managers can understand and verify without reading code.
+Our subscription plan resolver implements business logic as composable rules rather than nested conditionals. This approach handles edge cases like trial-to-paid conversions, plan migrations, and grandfathered pricing through declarative configuration rather than imperative code. The result is business logic that product managers can understand and verify without reading code.
 
-The [Slack notification guide](./docs/documentation/notifications/SLACK_NOTIFICATION_GUIDE.md) defines human-system communication protocols. By establishing clear notification hierarchies, contextual enrichment patterns, and actionability criteria, we ensure that alerts provide signal rather than noise. The right people receive the right information at the right time, with sufficient context to act immediately.
+Our notification system defines human-system communication protocols. By establishing clear notification hierarchies, contextual enrichment patterns, and actionability criteria, we ensure that alerts provide signal rather than noise. The right people receive the right information at the right time, with sufficient context to act immediately.
 
 ## Engineering Philosophy & Documentation Spine
 
 Our engineering philosophy centers on the principle that code should be comprehensible to both human developers and AI systems. This dual optimization creates systems that are not only maintainable but actively self-improving through AI-assisted development.
+
+Internally, IX Coach maintains over 2,300 pages of interconnected backend documentation. This repo presents a representative slice (~51 pages) focused on architecture, deterministic debugging, and orchestration.
 
 The [agent task system](./AGENT_TASK_SYSTEM_README.md) implements work management as structured data rather than informal communication. Each task captures requirements, acceptance criteria, verification steps, and progress indicators in machine-readable format. This structure enables AI agents to autonomously execute complex multi-step workflows while maintaining full auditability. The result is 10x productivity gains through human-AI collaboration.
 
@@ -133,15 +139,15 @@ The [document organization guide](./docs/documentation/process/DOCUMENT_ORGANIZA
 
 [Implementation guides](./docs/documentation/process/IMPLEMENTATION_GUIDES.md) capture battle-tested patterns extracted from production systems. These aren't theoretical frameworks but proven solutions that have processed billions of requests. Each pattern includes context, trade-offs, and metrics demonstrating real-world effectiveness.
 
-Our testing philosophy, detailed in the [test setup guide](./test-utils/TEST_SETUP_GUIDE.md) and [test profile data guide](./test-utils/TEST_PROFILE_DATA_GUIDE.md), prioritizes deterministic reproducibility. By maintaining consistent test data and environments, we achieve test reliability above 99.9%. This reliability transforms tests from a source of friction into a trusted safety net that enables confident refactoring.
+Our testing philosophy prioritizes deterministic reproducibility. By maintaining consistent test data and environments, we achieve test reliability above 99.9%. This reliability transforms tests from a source of friction into a trusted safety net that enables confident refactoring.
 
-The [payment flow test coverage](./docs/documentation/stripe/PAYMENT_FLOW_TEST_COVERAGE.md) exemplifies our approach to mission-critical testing. Payment systems cannot tolerate edge case failures, so we test every conceivable scenario - network timeouts, race conditions, partial failures, and state inconsistencies. This exhaustive coverage has achieved 99.99% payment reliability in production.
+Our payment flow test coverage exemplifies our approach to mission-critical testing. Payment systems cannot tolerate edge case failures, so we test every conceivable scenario - network timeouts, race conditions, partial failures, and state inconsistencies. This exhaustive coverage has achieved 99.99% payment reliability in production.
 
-[Important warning logs](./docs/documentation/logging/IMPORTANT_WARNING_LOGS.md) implements defensive observability. By logging anomalous conditions that shouldn't occur but occasionally do, we detect system degradation before it impacts users. These early warning signals have prevented dozens of potential outages by identifying issues while they're still recoverable.
+Our warning log system implements defensive observability. By logging anomalous conditions that shouldn't occur but occasionally do, we detect system degradation before it impacts users. These early warning signals have prevented dozens of potential outages by identifying issues while they're still recoverable.
 
-The [Stripe logger refactoring](./docs/documentation/stripe/STRIPE_LOGGER_REFACTORING.md) demonstrates iterative system improvement. Rather than ad-hoc logging additions, we systematically restructured logging to provide semantic context, causal chains, and actionable diagnostics. This structured approach reduces debugging time by 75% because logs tell a coherent story rather than scattered data points.
+Our payment logger refactoring demonstrates iterative system improvement. Rather than ad-hoc logging additions, we systematically restructured logging to provide semantic context, causal chains, and actionable diagnostics. This structured approach reduces debugging time by 75% because logs tell a coherent story rather than scattered data points.
 
-Our [screen ID system](./account-management/docs/SCREEN_ID_SYSTEM.md) brings determinism to UI state management. By assigning unique identifiers to every screen state and transition, we achieve precise navigation tracking, error reproduction, and user journey analysis. This system transforms UI debugging from guesswork into data-driven investigation.
+Our screen ID system brings determinism to UI state management. By assigning unique identifiers to every screen state and transition, we achieve precise navigation tracking, error reproduction, and user journey analysis. This system transforms UI debugging from guesswork into data-driven investigation.
 
 ## AI Agent Orchestration
 
@@ -154,19 +160,19 @@ graph TD
         SPECIALIST[Specialist Agents<br/>Domain expertise]
         COLLAB[Agent Collaboration<br/>Parallel execution]
     end
-    
+
     subgraph "10x Productivity Engine"
         CONTEXT[Context Preloading<br/>Zero ramp-up time]
         PARALLEL[Parallel Execution<br/>N agents simultaneously]
         MEMORY[Institutional Memory<br/>Never forgets solutions]
     end
-    
+
     subgraph "Human Amplification"
         INTENT[Natural Language<br/>→ Deterministic Action]
         VERIFY[Self-Verification<br/>99.9% accuracy]
         EXPLAIN[Explanation Engine<br/>Why not just what]
     end
-    
+
     INTENT -->|Semantic Mapping| ORCHESTRATOR
     ORCHESTRATOR -->|Task Distribution| SPECIALIST
     SPECIALIST -->|Coordination| COLLAB
@@ -176,7 +182,7 @@ graph TD
     VERIFY -->|Validated| EXPLAIN
     MEMORY -->|Pattern Library| CONTEXT
     EXPLAIN -->|Learning| MEMORY
-    
+
     style Autonomous Multi-Agent System fill:#e6e6ff
     style 10x Productivity Engine fill:#ffe6f9
     style Human Amplification fill:#f9ffe6
@@ -222,6 +228,6 @@ The [master Claude documentation](./CLAUDE.md) serves as the operational handboo
 
 ## License
 
-This project is licensed under the [Next AI Labs Inc Proprietary License](../LICENSE.md). All rights reserved.
+This project is licensed under the PolyForm Noncommercial License 1.0.0. All rights reserved.
 
 © 2025 Next AI Labs Inc. All rights reserved.
